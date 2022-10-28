@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Text, View } from 'react-native';
 import Home from "./Home";
-import Login from "./Login";
+import Login from "../components/Login";
 import { connect } from "react-redux";
 import commonStyles from '../Styles/style'
 

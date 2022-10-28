@@ -10,6 +10,7 @@ import IndexScreen from './src/screens/Index'
 import SignupForm from './src/screens/SignupForm'
 
 import reduxReducer from "./reduxReducer";
+import Login from './src/screens/Login';
 
 
 
@@ -31,6 +32,11 @@ export default function App() {
             <Stack.Screen
               name="Sign up"
               component={SignupForm}
+              options={{ headerBackTitleVisible: false, headerShown: true }}
+            />
+            <Stack.Screen
+              name="Login"
+              component={Login}
               options={{ headerBackTitleVisible: false, headerShown: true }}
             />
           </Stack.Navigator>
