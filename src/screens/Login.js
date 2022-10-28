@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 
 import commonStyles from '../Styles/style'
 import { useNavigation } from '@react-navigation/native';
+import CountryDropdown from '../components/CountryDropdown';
 
 
 const { width } = Dimensions.get('window')
@@ -33,31 +34,18 @@ function Login(props) {
             resizeMode='contain'
           />
         </View>
-        <View style={{paddingBottom: 150, width: '100%'}}>
-          <TouchableOpacity>
+        <View style={{paddingBottom: 200, width: '100%'}}>
+          
+          <CountryDropdown />
+          <View style={{marginTop: 30}}>
+            <TextInput placeholderTextColor="#000" placeholder='Mobile number*' style={{fontSize: 16, borderBottomWidth: 1, borderBottomColor: 'gray', height: 50}} />
+          </View>
+          <TouchableOpacity style={{marginTop: 30}}>
             <View style={{flexDirection: 'row', backgroundColor: '#DB4437', justifyContent: 'center', alignItems: 'center', paddingVertical: 15, borderRadius: 20}}>
-              <Image
-                source={require('../assets/img/google.png')}
-                style={{ width: 28, height: 28 }}
-                resizeMode='contain'
-              />
-              <Text style={{color: '#fff', marginLeft: 20, fontSize: 20}}>Google</Text>
+              <Text style={{color: '#fff', fontSize: 20}}>Submit</Text>
             </View>
           </TouchableOpacity>
           
-          <TouchableOpacity style={{marginTop: 30}}>
-            <View style={{flexDirection: 'row', backgroundColor: '#989898', justifyContent: 'center', alignItems: 'center', paddingVertical: 15, borderRadius: 20}}>
-              <Image
-                source={require('../assets/img/smartphone.png')}
-                style={{ width: 28, height: 28 }}
-                resizeMode='contain'
-              />
-              <Text style={{color: '#fff', marginLeft: 20, fontSize: 20}}>Phone</Text>
-            </View>
-          </TouchableOpacity>
-          <View style={{marginTop: 20}}>
-            <Text>Agree to Terms and Conditions</Text>
-          </View>
         </View>
       </View>
     </View>
