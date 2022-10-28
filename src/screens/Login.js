@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Button, Text, View, Dimensions, StyleSheet, Image, TextInput, StatusBar } from 'react-native';
+import { Button, Text, View, Dimensions, StyleSheet, Image, TextInput, StatusBar, TouchableOpacity } from 'react-native';
 import { connect } from "react-redux";
 
 import commonStyles from '../Styles/style'
@@ -22,63 +22,38 @@ function Login(props) {
     setShowSignup(!showSignup)
   }
   return (
-    <View>
+    <View style={{flex: 1}}>
       
-        <StatusBar translucent={true} backgroundColor={'transparent'} />
-      
-        <Image
-          source={require('../assets/img/logo.png')}
-          style={{ width: 200, height: 200 }}
-          resizeMode='contain'
-        />
+      <StatusBar translucent={true} backgroundColor={'transparent'} />
       <View style={styles.loginBottom}>
-        <View style={styles.loginBottomCurve}></View>
-        <View style={styles.child}>
-          <View style={{ flexDirection: 'row', padding: 20 }}>
-            <Text style={commonStyles.font16}>Not a memeber?</Text>
-            {!showSignup ?
-              <Text onPress={doSignup} style={[commonStyles.fontGreen16, { marginLeft: 5 }]}>Sign up now</Text>
-              :
-              <Text onPress={doSignup} style={[commonStyles.fontGreen16, { marginLeft: 5 }]}>Log In</Text>
-            }
-          </View>
-          <View>
-            <Button icon="facebook" mode="contained" onPress={() => console.log('Pressed')} style={commonStyles.fbBtn} title="Log in with Facebook" />
-            <Button labelStyle={{color: '#E94235'}} icon="google" mode="contained" onPress={() => console.log('Pressed')} style={commonStyles.googleBtn} title="Log in with Google" />
-          </View>
-          <View style={{ width: width - 160, textAlign: 'center', alignItems: 'center', marginBottom: 10 }}>
-            <Text>OR</Text>
-          </View>
-          {!showSignup ? <View>
-            <TextInput
-              label="Email"
-              value={email}
-              onChangeText={v => setEmail(v)}
-              style={commonStyles.commonInput}
-              underlineColor="transparent"
-              placeholder="Username"
-            />
-            <TextInput
-              label="Password"
-              placeholder="Password"
-              value={password}
-              onChangeText={v => setPassword(v)}
-              secureTextEntry={true}
-              style={commonStyles.commonInput}
-              underlineColor="transparent"
-            />
-            <View style={{ alignItems: 'center' }}>
-              <Button onPress={() => doLogin()} title="Log In" />
+        <View style={{paddingTop: 200}}>
+          <Image
+            source={require('../assets/img/instagram.png')}
+            style={{ width: 100, height: 100 }}
+            resizeMode='contain'
+          />
+        </View>
+        <View style={{paddingBottom: 200, width: '100%'}}>
+          <TouchableOpacity>
+            <View style={{flexDirection: 'row', backgroundColor: '#DB4437', justifyContent: 'center', alignItems: 'center', paddingVertical: 10, borderRadius: 20}}>
+              <Image
+                source={require('../assets/img/google.png')}
+                style={{ width: 28, height: 28 }}
+                resizeMode='contain'
+              />
+              <Text style={{color: '#fff', marginLeft: 10}}>Google</Text>
             </View>
-            <View alignItems="flex-end">
-              <Button title='Forgot password?'/>
+          </TouchableOpacity>
+          <TouchableOpacity style={{marginTop: 30}}>
+            <View style={{flexDirection: 'row', backgroundColor: '#DB4437', justifyContent: 'center', alignItems: 'center', paddingVertical: 10, borderRadius: 20}}>
+              <Image
+                source={require('../assets/img/google.png')}
+                style={{ width: 28, height: 28 }}
+                resizeMode='contain'
+              />
+              <Text style={{color: '#fff', marginLeft: 10}}>Phone</Text>
             </View>
-          </View> :
-            <View>
-              <Button labelStyle={{ color: '#18C3C3' }} mode="contained" icon="account" style={commonStyles.googleBtn} onPress={() =>
-                navigation.navigate('Sign up')
-              } title='Sign up here' />
-            </View>}
+          </TouchableOpacity>
         </View>
       </View>
     </View>
@@ -99,17 +74,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     paddingLeft: 80,
     paddingRight: 80,
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    flex: 1,
+    flexDirection: 'column'
   },
-  loginBottomCurve: {
-    width: "34%",
-    height: 100,
-    position: "absolute",
-    top: -50,
-    left: "64%",
-    borderRadius: 100,
-    backgroundColor: "#fff",
-    transform: [{ scaleX: 5 }, { scaleY: 1 }],
-  },
+  
   child: {
     position: 'relative',
     bottom: 40
