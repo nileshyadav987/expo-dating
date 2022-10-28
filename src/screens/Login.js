@@ -33,27 +33,31 @@ function Login(props) {
             resizeMode='contain'
           />
         </View>
-        <View style={{paddingBottom: 200, width: '100%'}}>
+        <View style={{paddingBottom: 150, width: '100%'}}>
           <TouchableOpacity>
-            <View style={{flexDirection: 'row', backgroundColor: '#DB4437', justifyContent: 'center', alignItems: 'center', paddingVertical: 10, borderRadius: 20}}>
+            <View style={{flexDirection: 'row', backgroundColor: '#DB4437', justifyContent: 'center', alignItems: 'center', paddingVertical: 15, borderRadius: 20}}>
               <Image
                 source={require('../assets/img/google.png')}
                 style={{ width: 28, height: 28 }}
                 resizeMode='contain'
               />
-              <Text style={{color: '#fff', marginLeft: 10}}>Google</Text>
+              <Text style={{color: '#fff', marginLeft: 20, fontSize: 20}}>Google</Text>
             </View>
           </TouchableOpacity>
+          
           <TouchableOpacity style={{marginTop: 30}}>
-            <View style={{flexDirection: 'row', backgroundColor: '#DB4437', justifyContent: 'center', alignItems: 'center', paddingVertical: 10, borderRadius: 20}}>
+            <View style={{flexDirection: 'row', backgroundColor: '#989898', justifyContent: 'center', alignItems: 'center', paddingVertical: 15, borderRadius: 20}}>
               <Image
-                source={require('../assets/img/google.png')}
+                source={require('../assets/img/smartphone.png')}
                 style={{ width: 28, height: 28 }}
                 resizeMode='contain'
               />
-              <Text style={{color: '#fff', marginLeft: 10}}>Phone</Text>
+              <Text style={{color: '#fff', marginLeft: 20, fontSize: 20}}>Phone</Text>
             </View>
           </TouchableOpacity>
+          <View style={{marginTop: 20}}>
+            <Text>Agree to Terms and Conditions</Text>
+          </View>
         </View>
       </View>
     </View>
